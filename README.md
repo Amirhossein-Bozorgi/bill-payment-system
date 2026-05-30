@@ -11,7 +11,7 @@
 1. Install XAMPP
 2. Put project in htdocs folder
 3. Import paybills.sql in phpMyAdmin
-4. Configure config.php with your database info
+4. Configure DB.php with your database info
 
 ## Default Login
 - Username: admin
