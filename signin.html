@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ثبت نام</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./CSS/signin1.css">
+    <link rel="icon" href="img/3.webp">
+    <style>
+        form{
+    margin: 150px auto 0 auto !important;
+    position: static;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <form action="./insert.php" method="post" class="row p-2 gap-3" style="display:flex  !important;">
+        <p class="text-danger text-center big mt-1 mb-0">این ثبت نام برای مدیر است!!</p>
+        <p class="text-warning text-center small">اگر ساکن هستید صبر کنید تا مدیر ساختمان اسم شمارا ثبت کند بعد از ثبت شدن اسم خود از قسمت ورود وارد حساب کاربری خود شوید</p>
+        <input type="text" placeholder="نام" name="firstname" id="firstname" class="col-12 item" required>
+        <input type="text" placeholder="نام خانوادگی" name="lastname" id="lastname" class="col-12 item" required>
+        <input type="text" placeholder="نام کاربری به انگلیسی" name="username1" id="username1" class="col-12 item" >
+        <input type="password" placeholder="رمزعبور" name="password" id="password" class="col-10 item">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="24" fill="currentColor" class="bi bi-eye-fill col-1 p-0 d-none" viewBox="0 0 16 16" id="show">
+        <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0"/>
+        <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8m8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="24" fill="currentColor" class="bi bi-eye-slash-fill col-1 p-0" viewBox="0 0 16 16" id="unshow">
+        <path d="m10.79 12.912-1.614-1.615a3.5 3.5 0 0 1-4.474-4.474l-2.06-2.06C.938 6.278 0 8 0 8s3 5.5 8 5.5a7 7 0 0 0 2.79-.588M5.21 3.088A7 7 0 0 1 8 2.5c5 0 8 5.5 8 5.5s-.939 1.721-2.641 3.238l-2.062-2.062a3.5 3.5 0 0 0-4.474-4.474z"/>
+        <path d="M5.525 7.646a2.5 2.5 0 0 0 2.829 2.829zm4.95.708-2.829-2.83a2.5 2.5 0 0 1 2.829 2.829zm3.171 6-12-12 .708-.708 12 12z"/>
+        </svg>
+        <input type="number" placeholder="کدملی" name="nationcode" id="nationcode" class="col-12 item">
+        <input type="number" placeholder="شماره تلفن (همراه)" name="number" id="number" class="col-12 item">
+        <input type="number" placeholder="پلاک آپارتمان" name="ap" id="ap" class="col-12 item">
+        <label class="col-3">تاریخ تولد:</label>
+        
+        <select name="year" id="select1" class="date col-3">
+            
+        </select>
+        <select name="month" id="select2" class="date col-2">
+            
+        </select>
+        <select name="day" id="select3" class="date col-2">
+            
+        </select>
+        <button type="submit" id="submit"  class="col-4 btn btn-success">ثبت</button>
+        <a href="./index.php" class="btn btn-danger col-4">برگشت</a>
+    </form>
+    </div>
+<script>
+var select1 = document.getElementById("select1");
+var select2 = document.getElementById("select2");
+var select3 = document.getElementById("select3");
+// birth Date Navigation
+function myDate(){
+var year;
+var month;
+var day;
+for(var i=1405; i>=1300; i--){
+    year = document.createElement("option");
+    year.setAttribute("value",i);
+    select1.append(year);
+    year.innerHTML=i;
+}
+for(var i=12 ; i>=1; i--){
+    month = document.createElement("option");
+    month.setAttribute("value",i);
+    select2.append(month);
+    month.innerHTML=i;
+}
+for(var i=31; i>=1 ; i--){
+    day = document.createElement("option");
+    day.setAttribute("value",i);
+    select3.append(day);
+    day.innerHTML=i;
+}
+}
+
+myDate();
+
+var password = document.getElementById("password");
+var username = document.getElementById("username1");
+var form = document.querySelector("form");
+var iconSh = document.getElementById("show");
+var iconUn = document.getElementById("unshow");
+
+function main(){
+    // Show password
+    iconUn.addEventListener("click",()=>{
+        iconUn.classList.add("d-none");
+        iconSh.classList.remove("d-none");
+        password.type="text";
+    });
+    // UnShow passowrd
+    iconSh.addEventListener("click",()=>{
+        iconUn.classList.remove("d-none");
+        iconSh.classList.add("d-none");
+        password.type="password";
+    });
+}
+// add User ID into localStorage
+form.addEventListener("submit",()=>{
+    localStorage.setItem("user",JSON.stringify(username.value));
+})
+
+document.addEventListener("DOMContentLoaded",main);
+</script>
+</body>
+</html>
