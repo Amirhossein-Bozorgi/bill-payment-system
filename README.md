@@ -16,6 +16,7 @@
 ## Default Login
 - Username: admin
 - Password: 1234
+- NationalCode:0000000000
 
 ## Features
 - Separate login for manager and residents
