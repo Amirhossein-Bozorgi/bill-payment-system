@@ -22,3 +22,5 @@
 - Separate login for manager and residents
 - Bill management system
 - Full admin panel
+
+#Status: In progress
