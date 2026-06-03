@@ -1,0 +1,212 @@
+@font-face {
+    font-family: "vazir-bold";
+    src: url(./Font/Vazirmatn-Bold.ttf);
+}
+@font-face {
+    font-family: "vazir";
+    src: url(./Font/Vazirmatn-Regular.ttf);
+}
+header{
+    display: grid;
+    grid-template-columns: 12;
+    grid-template-rows: 1;
+    align-items: center;
+    height: 10vh;
+}
+h1{
+    display: inline-block !important;
+    width: fit-content;
+    font-family: "vazir-bold";
+    grid-column-start: 2 !important;
+    grid-column-end: 3 !important;
+    grid-row-start: 1;
+    grid-row-end:1 ;
+}
+ul{
+    font-family: vazir;
+    display: flex;
+    width: fit-content !important;
+    gap: 20px;
+    flex-direction: row-reverse;
+    grid-column-start: 10;
+    grid-column-end:11;
+    grid-row-start: 1;
+    grid-row-end:1 ;
+    margin: auto;
+}
+li{
+    display: inline-block !important;
+    width: fit-content !important;
+}
+li a{
+    text-decoration: none;
+    transition: all 400ms;
+}
+a:hover{
+    color: #641d63 !important;
+}
+h2{
+    font-family: "vazir-bold";
+    color: #5352ed !important;
+}
+.display-7{
+    font-family: "vazir";
+    color: #0c98b6 !important;
+}
+body{
+    align-items: center;
+}
+.ul2{
+    grid-column-start: 11;
+    grid-column-end: 12;
+    padding-left: 0;
+}
+li .login{
+box-shadow: 0px 0px 0px rgba(0,0,0,0.5);
+transition: all 400ms;
+padding: 5px;
+}
+li .login:hover{
+    box-shadow: -5px 5px 5px rgba(0,0,0,0.5);
+    border-radius: 5px;
+    background-color: #6521bf;
+    color: white !important;
+}
+li .signin{
+box-shadow: 0px 0px 0px rgba(0,0,0,0.5);
+transition: all 400ms;
+padding: 5px;
+}
+li .signin:hover{
+    box-shadow: -5px 5px 5px rgba(0,0,0,0.5);
+    border-radius: 5px;
+    background-color: #6521bf;
+    color: white !important;
+}
+main{
+    display: grid !important;
+    grid-template-columns: 12 !important;
+    grid-row: 12 !important;
+}
+.txt{
+    grid-column-start:2 !important;
+    grid-column-end: 3 !important;
+    grid-row-start: 6 !important;
+    grid-row-end: 7 !important;
+    align-content:center !important;
+    
+}
+.img{
+    grid-column-start:4;
+    grid-column-end: 6;
+    grid-row-start: 6;
+    grid-row-end: 7;
+    position: relative;
+    top: 150px;
+}
+@media (max-width:600px) {
+header{
+    display: grid;
+    grid-template-columns: 12;
+    grid-template-rows: 1;
+    align-items: center;
+    height: 10vh;
+}
+h1{
+    display: inline-block !important;
+    width: fit-content;
+    font-family: "vazir-bold";
+    grid-column-start: 1 !important;
+    grid-column-end:2 !important;
+    grid-row-start: 1;
+    grid-row-end:2 ;
+    padding: 10px;
+    justify-self: center;
+}
+ul{
+    font-family: vazir;
+    display: none;
+    width: fit-content !important;
+    gap: 20px;
+    flex-direction: row-reverse;
+    grid-column-start: 10;
+    grid-column-end:11;
+    grid-row-start: 1;
+    grid-row-end:2 ;
+    margin: auto;
+}
+li{
+    display: inline-block !important;
+    width: fit-content !important;
+}
+li a{
+    text-decoration: none;
+}
+a:hover{
+    color: #641d63 !important;
+}
+.img{
+    grid-column-start:1 !important;
+    grid-column-end: 2 !important;
+    grid-row-start: 6 !important;
+    grid-row-end: 8 !important;
+    align-content:center !important;
+    justify-self: center;
+}
+.img img{
+    width: 100vw;
+};
+.display-7{
+    /* display: none; */
+    font-size: 8px;
+    text-align: center;
+}
+.txt{
+    grid-column-start:1 !important;
+    grid-column-end: 2 !important;
+    grid-row-start: 6 !important;
+    grid-row-end: 7 !important;
+    align-content:center !important;
+    justify-self: center;
+    justify-items: center;
+    margin-top: 10px;
+}
+}
+@media (max-width:1000px) {
+    .img img{
+        width: 400px;
+    }
+}
+
+.username{
+    justify-self: center;
+    color: white;
+    padding: 20px;
+    border-radius: 10%;
+    background:linear-gradient(45deg,#321484,#10228f);
+    cursor: pointer;
+}
+#profile{
+    grid-column-start: 11 !important;
+    grid-column-end:12 !important;
+    justify-self: center;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+#info{
+    position: absolute;
+    justify-self: center;
+    top:10vh;
+    display: none;
+    z-index: 999;
+    backdrop-filter: blur(15px);
+    left: 1.7%;
+}
+.active{
+    display: inline-block !important;
+}
+@media (max-width:1000px){
+    #info{
+        left: 0vw;
+    }
+}
