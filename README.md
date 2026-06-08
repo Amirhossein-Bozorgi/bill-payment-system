@@ -9,7 +9,7 @@
 
 <div dir="rtl">
 
-## 🇮🇷 فارسی
+## فارسی
 
 یک سیستم جامع مدیریت قبض آپارتمان با پنل مدیریتی کامل برای مدیران و ساکنین.
 
@@ -49,7 +49,6 @@ cp -r bill-payment-system /opt/lampp/htdocs/
 |-----|-----------|---------|--------|
 | مدیر | admin | 1234 | 0000000000 |
 
-> ⚠️ بعد از نصب حتماً رمز عبور پیش‌فرض را تغییر دهید.
 
 </div>
 
@@ -106,7 +105,6 @@ $database = "paybills";
 |------|---------|---------|--------------|
 | Manager | admin | 1234 | 0000000000 |
 
-> ⚠️ **Important:** Change the default password after installation.
 
 ### 📁 Project Structure
 
