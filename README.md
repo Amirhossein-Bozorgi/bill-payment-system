@@ -1,71 +1,146 @@
-# 🏢 Apartment Bill Payment System
+# 🏢 Apartment Bill Payment System | سیستم مدیریت قبض آپارتمان
 
-> A web-based system for managing and tracking apartment utility bills — built with PHP, JavaScript, and MySQL.
-
-![Status](https://img.shields.io/badge/Status-In%20Progress-yellow)
-![PHP](https://img.shields.io/badge/PHP-7.4+-blue)
-![Bootstrap](https://img.shields.io/badge/Bootstrap-5-purple)
-![License](https://img.shields.io/badge/License-MIT-green)
+![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)
 
 ---
 
-## 📌 About
+<div dir="rtl">
 
-This project helps apartment managers track residents' utility bills (water, electricity, gas, etc.) and allows residents to view their own payment history through a separate login panel.
+## 🇮🇷 فارسی
 
----
+یک سیستم جامع مدیریت قبض آپارتمان با پنل مدیریتی کامل برای مدیران و ساکنین.
 
-## ✨ Features
+### ✨ امکانات
 
-- 🔐 Separate login panel for **Manager** and **Residents**
-- 📋 Full bill management (add, view, track)
-- 👥 Resident management by manager
-- 📊 Admin dashboard with full info view
-- 💡 Clean and responsive UI with Bootstrap
+- 🔐 **ورود جداگانه** برای مدیر و ساکنین
+- 📋 **مدیریت قبوض** — ثبت، ویرایش و پیگیری پرداخت‌ها
+- 👥 **مدیریت ساکنین** — افزودن و مشاهده اطلاعات کامل
+- 🖥️ **پنل ادمین** — داشبورد کامل برای مدیریت آپارتمان
+- 📱 **طراحی ریسپانسیو** با Bootstrap
 
----
+### 🛠️ تکنولوژی‌ها
 
-## 🛠️ Technologies Used
+| بخش | تکنولوژی |
+|-----|----------|
+| Backend | PHP |
+| Frontend | HTML, CSS, JavaScript |
+| Database | MySQL |
+| UI Framework | Bootstrap |
 
-| Technology | Purpose |
-|------------|---------|
-| PHP | Backend logic |
-| MySQL | Database |
-| JavaScript | Frontend interactions |
-| Bootstrap | Responsive UI |
-| HTML / CSS | Structure & styling |
+### 🚀 نصب و راه‌اندازی
 
----
+**پیش‌نیازها:** XAMPP، PHP 7.4+، MySQL 5.7+
 
-## ⚙️ Installation
+```bash
+git clone https://github.com/Amirhossein-Bozorgi/bill-payment-system.git
+cp -r bill-payment-system /opt/lampp/htdocs/
+```
 
-1. Install [XAMPP](https://www.apachefriends.org/)
-2. Clone this repository into the `htdocs` folder:
-   ```bash
-   git clone https://github.com/Amirhossein-Bozorgi/bill-payment-system.git
-   ```
-3. Import `paybills.sql` into phpMyAdmin
-4. Open `DB.php` and update your database credentials
-5. Visit `http://localhost/bill-payment-system` in your browser
+- phpMyAdmin رو باز کن و فایل `paybills.sql` رو import کن
+- فایل `DB.php` رو با اطلاعات دیتابیست تنظیم کن
+- برو به: `http://localhost/bill-payment-system`
 
----
-## 🚧 Current Status
+### 🔑 اطلاعات ورود پیش‌فرض
 
-This project is currently **in progress**. Planned features:
+| نقش | نام کاربری | رمز عبور | کد ملی |
+|-----|-----------|---------|--------|
+| مدیر | admin | 1234 | 0000000000 |
 
-- [ ] Payment confirmation system
-- [ ] Email notifications
-- [ ] Monthly report generation
-- [ ] Improved security & input validation
+> ⚠️ بعد از نصب حتماً رمز عبور پیش‌فرض را تغییر دهید.
+
+</div>
 
 ---
 
-## 👨‍💻 Author
+## 🇬🇧 English
 
-**Amirhossein Bozorgi**
-- GitHub: [@Amirhossein-Bozorgi](https://github.com/Amirhossein-Bozorgi)
-- Instagram: [@vanguard.studio1](https://instagram.com/vanguard.studio1)
+A comprehensive apartment bill payment system with a full admin panel for managers and residents.
+
+### ✨ Features
+
+- 🔐 **Separate login** for manager and residents
+- 📋 **Bill management** — create, edit and track payments
+- 👥 **Resident management** — add and view complete resident info
+- 🖥️ **Admin panel** — full dashboard for apartment management
+- 📱 **Responsive design** with Bootstrap
+
+### 🛠️ Tech Stack
+
+| Layer | Technology |
+|-------|-----------|
+| Backend | PHP |
+| Frontend | HTML, CSS, JavaScript |
+| Database | MySQL |
+| UI Framework | Bootstrap |
+
+### 🚀 Installation
+
+**Requirements:** XAMPP, PHP 7.4+, MySQL 5.7+
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/Amirhossein-Bozorgi/bill-payment-system.git
+
+# 2. Move to htdocs
+cp -r bill-payment-system /opt/lampp/htdocs/
+```
+
+3. Open phpMyAdmin and import `paybills.sql`
+4. Configure `DB.php` with your database credentials:
+
+```php
+$host = "localhost";
+$user = "root";
+$password = "your_password";
+$database = "paybills";
+```
+
+5. Visit: `http://localhost/bill-payment-system`
+
+### 🔑 Default Login
+
+| Role | Username | Password | National Code |
+|------|---------|---------|--------------|
+| Manager | admin | 1234 | 0000000000 |
+
+> ⚠️ **Important:** Change the default password after installation.
+
+### 📁 Project Structure
+
+```
+bill-payment-system/
+├── CSS/                  # Stylesheets
+├── JS/                   # JavaScript files
+├── img/                  # Images
+├── DB.php                # Database connection
+├── index.php             # Main page
+├── login.html            # Login page
+├── managerLogin.php      # Manager login
+├── residentLogin.php     # Resident login
+├── addResidents.php      # Add resident
+├── managerFullInfo.php   # Manager full info
+└── README.md
+```
+
+### 🤝 Contributing
+
+Pull requests and issues are welcome!
+
+1. Fork the project
+2. Create your branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+### 📄 License
+
+This project is licensed under the MIT License.
 
 ---
 
-> 💡 *Built as part of my web development learning journey — Grade 12, Vocational School, Iran.*
+<div align="center">
+  Made with ❤️ by <a href="https://github.com/Amirhossein-Bozorgi">Amirhossein Bozorgi</a>
+</div>
