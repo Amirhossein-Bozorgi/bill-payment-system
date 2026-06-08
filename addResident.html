@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اضافه کردن ساکنین</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./CSS/addResident.css">
+    <link rel="icon" href="./img/3.webp">
+</head>
+<body>
+    <p class="h2 text-center mt-1">
+        اضافه کردن ساکنین
+    </p>
+    <div class="container">
+        <form action="./insertResident.php" class="row w-50 m-auto p-4 shadow-lg border-2 border-black gap-2 rounded-2" method="post">
+            <p class="text-center text-primary">لطفا اطلاعات ساکن را وارد کنید:</p>
+            <input type="number" class="d-none" id="id" name="id">
+            <input type="text" placeholder="نام" class="rounded-1 p-1" name="firstName">
+            <input type="text" placeholder="نام خانوادگی" class="rounded-1 p-1" name="lastName">
+            <input type="text" placeholder="نام کاربری" class="rounded-1 p-1" name="userName">
+            <input type="password" placeholder="رمزعبور (این رمز موقتی است و به وسیله ساکن تغییر میکند)" class="rounded-1 p-1 col-10" id="passwordInput" name="password">
+            <div class="align-content-center col-1 text-center p-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="24" fill="currentColor" class="bi bi-eye-fill col-12 p-0 d-none" viewBox="0 0 16 16" id="show">
+                    <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0"/>
+                    <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8m8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="24" fill="currentColor" class="bi bi-eye-slash-fill col-12 p-0" viewBox="0 0 16 16" id="unshow">
+                    <path d="m10.79 12.912-1.614-1.615a3.5 3.5 0 0 1-4.474-4.474l-2.06-2.06C.938 6.278 0 8 0 8s3 5.5 8 5.5a7 7 0 0 0 2.79-.588M5.21 3.088A7 7 0 0 1 8 2.5c5 0 8 5.5 8 5.5s-.939 1.721-2.641 3.238l-2.062-2.062a3.5 3.5 0 0 0-4.474-4.474z"/>
+                    <path d="M5.525 7.646a2.5 2.5 0 0 0 2.829 2.829zm4.95.708-2.829-2.83a2.5 2.5 0 0 1 2.829 2.829zm3.171 6-12-12 .708-.708 12 12z"/>
+                </svg>
+            </div>
+            <input type="number" placeholder="شماره همراه" class="rounded-1 p-1" name="number">
+            <input type="number" placeholder="شماره واحد" class="rounded-1 p-1" name="unit">
+            <button type="submit" class="col-5 m-auto btn btn-primary">اضافه کردن</button>
+            <a href="./index.php" class="text-decoration-none d-inline-block col-5 m-auto"><button type="button" class="w-100 btn btn-danger">برگشت</button></a>
+        </form>
+    </div>
+</body>
+
+</html>
+
+<div id="erMessage" class="text-danger display-3 text-center">فقط مدیر میتواند وارد این بخش شود
+    <br>
+    <a href="./moreServices.php" class="btn btn-warning">بازگشت</a>
+</div>
+<script>
+function main(){
+    var body = document.getElementsByTagName("body")[0];
+    var erMessage = document.getElementById("erMessage");
+    if(JSON.parse(localStorage.getItem("user")).isManager){
+    erMessage.classList.add("d-none");
+    body.children[0].classList.remove("d-none");
+    body.children[1].classList.remove("d-none");
+var idInp = document.getElementById("id");
+var user = JSON.parse(localStorage.getItem("user"));
+var id = user.id;
+idInp.value = id;
+
+var passwordINP = document.getElementById("passwordInput");
+var show = document.getElementById("show");
+var unshow = document.getElementById("unshow");
+
+unshow.addEventListener("click",()=>{
+    show.classList.remove("d-none");
+    unshow.classList.add("d-none");
+    passwordINP.type = "text" ;
+});
+
+show.addEventListener("click",()=>{
+    unshow.classList.remove("d-none");
+    show.classList.add("d-none");
+    passwordINP.type = "password" ;
+});
+}else{
+    erMessage.classList.remove("d-none");
+    body.children[0].classList.add("d-none");
+    body.children[1].classList.add("d-none");
+}
+}
+
+document.addEventListener("DOMContentLoaded",main);
+</script>

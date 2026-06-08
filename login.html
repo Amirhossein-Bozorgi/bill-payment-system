@@ -31,10 +31,10 @@
         <button type="submit" id="submit"  class="col-4 btn btn-success">ثبت</button>
         <a href="./index.php" class="btn btn-danger col-4">برگشت</a>
     </form>
-    <form action="./checkLogin.php" method="post" class="row p-2 gap-3" id="resident-form">
-        <p class="text-danger text-center">ورود ساکن</p>
+    <form action="./residentLogin.php" method="post" class="row p-2 gap-3" id="resident-form">
+        <p class="text-danger text-center m-0">ورود ساکن</p>
+        <p class="text-primary text-center m-0">اگر حساب ندارید به مدیر مراجعه کنید.</p>
         <input type="text" placeholder="نام کاربری" name="username-resident" id="username-resident" class="col-12 item">
-        <input type="number" placeholder="کدملی" name="nationcode-resident" id="nationcode-resident" class="col-12 item">
         <input type="password" placeholder="رمز عبور" name="password-resident" id="password-resident" class="col-10 item">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="24" fill="currentColor" class="bi bi-eye-fill col-1 p-0 d-none" viewBox="0 0 16 16" id="rshow">
         <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0"/>
@@ -66,13 +66,11 @@ function main(){
         iconMus.classList.add("d-none");
         iconMs.classList.remove("d-none");
         passwordM.type="text";
-
     });
     iconMs.addEventListener("click",()=>{
         iconMus.classList.remove("d-none");
         iconMs.classList.add("d-none");
         passwordM.type="password";
-
     });
     // Show and Unshow password for Resident
     iconRus.addEventListener("click",()=>{

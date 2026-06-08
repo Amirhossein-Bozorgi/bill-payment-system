@@ -29,6 +29,7 @@ try{
     foreach($fet as $row){
         if($username == $row["username"] && $password == $row["password"] && $nationalCode == $row["national_code"]){
             ?>
+            <div style="display:none" id="id"><?php echo $row["ID"] ?></div>
             <div style="display:none;" id="username27"><?php echo $row["username"] ?></div>
             <div style="display:none;" id="firstName1"><?php echo $row["first_name"] ?></div>
             <div style="display:none;" id="lastName1"><?php echo $row["last_name"] ?></div>
@@ -37,8 +38,10 @@ try{
                 var username =document.getElementById("username27").innerText;
                 var fistname =document.getElementById("firstName1").innerText;
                 var lastname =document.getElementById("lastName1").innerText;
-                
+                var id =document.getElementById("id").innerText;
+
                 var userInfo={
+                    id:id,
                     username:username,
                     firstName:fistname,
                     lastName:lastname,
@@ -46,6 +49,12 @@ try{
                 }
                 
                 localStorage.setItem("user",JSON.stringify(userInfo));
+                
+                // Guide to landing Page
+                document.addEventListener("DOMContentLoaded",()=>{
+                    location.assign("http://localhost/paybills/index.php");
+                });
+
             </script>
             <?php
             // header("location:index.php");

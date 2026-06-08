@@ -13,19 +13,18 @@
 </style>
 <?php
 try{
-    $username = $_POST["username-manager"];
-    $password = $_POST["password-manager"];
-    $nationalC = $_POST["nationcode-manager"];
+    $username = $_POST["username-resident"];
+    $password = $_POST["password-resident"];
 
     require"DB.php";
 
-    $sql = "SELECT * FROM `managers` WHERE '$username' = `username` AND '$password' = `password`";
+    $sql = "SELECT * FROM `residents` WHERE '$username' = `username` AND '$password' = `password`";
     $sub = $pdo->prepare($sql);
     $sub->execute();
     $fet = $sub->fetchAll();
 
     foreach($fet as $row){
-        if($username == $row["username"] && $password == $row["password"] && $nationalC == $row["national_code"]){
+        if($username == $row["username"] && $password == $row["password"]){
             ?>
             <div style="display:none" id="id1"><?php echo $row["ID"] ?></div>
             <div style="display:none;" id="username26"><?php echo $username ?></div>
@@ -44,7 +43,7 @@ try{
                     username:username,
                     firstName:fistname,
                     lastName:lastname,
-                    isManager:true
+                    isManager:false
                 }
                 
                 localStorage.setItem("user",JSON.stringify(userInfo));
@@ -57,7 +56,7 @@ try{
             <?php
             //  header("location:index.php");
         }else{
-            die("<div class=\"error\">نام کاربری یا پسورد یا کدملی اشتباه است!!</div>");
+            die("<div class=\"error\">نام کاربری یا پسورد اشتباه است!!</div>");
         }
     }
    

@@ -38,10 +38,12 @@
     </header>
     <main>
 <div class="menu-grid mt-5">
+  <a href="./addResident.html" class="text-black text-decoration-none">
   <div class="menu-card">
     <i class="bi bi-person-plus text-primary"></i>
     <span>اضافه کردن ساکنین</span>
   </div>
+  </a>
   <div class="menu-card">
     <i class="bi bi-file-plus text-primary"></i>
     <span>اضافه کردن قبض</span>
