@@ -6,7 +6,7 @@
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)
 
 
-![LandingPage][ScreenShots/LandingPage.png]
+![LandingPage](ScreenShots/LandingPage.png)
 ---
 
 <div dir="rtl">
